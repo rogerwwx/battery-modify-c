@@ -1,10 +1,24 @@
-// main.cpp - 精简版（等价于原 shell 逻辑，已移除异常依赖）
-#include <bits/stdc++.h>
+// main.cpp - 精简可编译版（替换 bits/stdc++.h）
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <chrono>
+#include <thread>
+#include <sstream>
+#include <iomanip>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cerrno>
+#include <ctime>
+#include <climits>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <signal.h>
+
 using namespace std;
 
 const string LOG_FILE = "/data/adb/battery_calibrate.log";
@@ -284,7 +298,7 @@ int main(int argc,char** argv){
         if(!daemonize()){ log_msg("后台守护进程化失败"); return 1; }
         monitor_voltage_loop();
     } else {
-        log_msg("'电量百分比更新'功能未启用，核心工作完成，程序退出。");
+        log_msg("用户未启用'电量百分比更新'功能，核心工作完成，程序退出。");
     }
     return 0;
 }
