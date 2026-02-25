@@ -31,8 +31,8 @@ jobs:
 
     - name: Strip binary
       run: |
-        $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip build/battery_calibrate
-
+        $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip --strip-all build/battery_calibrate
+        
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:

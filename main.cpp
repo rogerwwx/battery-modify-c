@@ -261,7 +261,7 @@ void monitor_voltage_loop(){
 }
 
 int main(int argc,char** argv){
-    string cfg="/data/adb/battery_config.ini";
+    string cfg="/data/battery_fix.conf";
     if(argc>1) cfg=argv[1];
     load_config(cfg);
 
